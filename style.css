@@ -1,0 +1,89 @@
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+	cursor: url("Normal_Select.cur"), auto !important;
+}
+
+.title-image {
+	background-image: url("background.jpg");
+	background-color: #cccccc;
+	height: 550px;
+	background-position: 20% 60%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	opacity: 0.8;
+}
+
+.title-text {	
+	text-align: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-family: Bahnschrift SemiBold;
+	text-shadow: 2px 2px 4px #000000;
+}
+
+.title {
+	text-align: center;
+	text-shadow: 2px 2px 4px #a9f5a9;
+	font-family: Arial Black;	
+}
+
+.carousel-caption {
+	text-shadow: 2px 2px 4px #000000;
+}
+
+#About_me {
+	height: auto;
+	padding-top: 90px;
+	margin: 70px;
+}
+#Education {
+	height: auto;
+	padding-top: 90px;
+	margin: 70px;
+}
+#Hobbies {
+	height: auto;
+	padding-top: 90px;
+	margin: 70px;
+}
+
+#Contact_me {
+	height: auto;
+	padding-top: 90px;
+	margin: 70px;
+}
+
+table, th, td {
+	border-style: solid;
+	border-width: 1px;
+}
+
+table {
+	margin: auto;
+}
+
+th, td {
+	padding: 5px;
+}
+
+td {
+	width: 400px;
+}
+
+footer {
+	text-align: center;
+	padding: 3px;
+	background-color: black;
+	color: white;
+}

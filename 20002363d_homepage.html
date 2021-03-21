@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Au Tsz Kei's home page</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div class="title-image">
+		<div class="title-text">
+		<h1>		
+			<a href="" style="color:#fff;" class="typewrite" data-period="2100" data-type='[ "Hi, I&#39m Au Tsz Kei.", "Welcome to my home page."]'>
+			<span class="wrap"></span>
+			</a>
+		</h1>		
+	<script>
+		var TxtType = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+		};
+
+    TxtType.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+        }
+
+        setTimeout(function() {
+        that.tick();
+        }, delta);
+    };
+
+    window.onload = function() {
+        var elements = document.getElementsByClassName('typewrite');
+        for (var i=0; i<elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+              new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+        document.body.appendChild(css);
+    };
+	</script>		
+		</div>
+	</div>
+
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+        <a class="navbar-brand" href="#">Au Tsz Kei
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#About_me">About me&#128172
+					</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Education">Education&#128216
+					</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Hobbies">Hobbies&#127923
+                    </a>
+                </li>
+				<li class="nav-item">
+                    <a class="nav-link" href="#Contact_me">Contact me&#128222
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+	
+	<br>
+
+    <div id="About_me">
+        <h1 class="title">About Me</h1>
+        <br>
+		<div class="container mt-5">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="img">
+						<img src="profile_image.jpg" class="rounded-circle" alt="Profile image" width="100%">
+					</div>
+                    <br>
+                </div>
+            <div class="col-md-9 about-text align-self-center">
+				<p>
+				My name is Au Tsz Kei. I'm a year 3 student studying for my Bachelors in Information Security at the Hong Kong Polytechnic University. I enjoy learning new things when I am free. Although I encounter difficulties sometimes, I will try my best to find out solution using the Internet.
+				</p>
+			</div>
+            </div>
+        </div>
+	</div>
+	<br>
+	
+	<div id="Education">
+        <h1 class="title">Education</h1>
+        <br>
+		<div class="container mt-5">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="img">
+						<img src="plkno1whc.jpg" alt="Secondary school" width="100%">
+					</div>
+                    <br>
+                </div>
+            <div class="col-md-9 about-text align-self-center">
+				<h4>Po Leung Kuk No.1 W.H.Cheung College</h4>
+				<p>I graduated from secondary school in 2017. I found myself interested in science and technology when I was young. So, I have chosen ICT for elective subject in secondary school. At that time, I have learnt the fundamentals of database systems, such as data types, SQL commands and so on.
+				</p>
+			</div>
+            </div>
+        </div>		
+		
+		<div class="container mt-5">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="img">
+						<img src="hkcc.jpg" alt="Asso" width="100%">
+					</div>
+                    <br>
+                </div>
+            <div class="col-md-9 about-text align-self-center">
+				<h4>Hong Kong Community College</h4>
+				<p>
+				I obtained an Associate Degree in Information Technology in 2020. I have studied a wide range of computing aspects, such as computer programming, database, cloud computing and networking. I acquired the basic computing knowledge from these courses. Besides, I joined a study tour to Singapore in 2018. I visited some small and medium-sized enterprises (SMEs) in Singapore. It was a great opportunity for me to be exposed to different environments and cultures.
+				</p>
+			</div>
+            </div>
+        </div>
+		
+		<div class="container mt-5">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="img">
+						<img src="polyu.png" alt="Bachelors" width="100%">
+					</div>
+                    <br>
+                </div>
+            <div class="col-md-9 about-text align-self-center">
+				<h4>The Hong Kong Polytechnic University</h4>
+				<p>
+				I'm pursuing my Bachelor's degree in Information Security. University is a great opportunity for me to get involved in so many different things. For example, I have met a lot of friends in different clubs and societies. Moreover, I have learnt a lot of things so far, such as fundamentals of cybersecurity. I enjoy solving problem and exploring, and hope to pursue a career in cybersecurity.
+				</p>
+			</div>
+            </div>
+        </div>
+	</div>
+	<br>
+	
+	<div id="Hobbies">
+        <h1 class="title">Hobbies</h1>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-12 about-text">
+					<p>
+					I love taking photos and travelling. I feel relaxed while travelling. Taking photos let me capture the moments that I want to last forever. When I look at the pictures I took, I will remember every moment that I spent with my friends and family.
+					<br>
+					However, due to the pandemic, all of us cannot go on a trip. I hope everything will be fine as soon as possible.
+					</p>
+				</div>
+			</div>
+		
+		
+			<div class="container">
+				<h4>Here are some photos I took while travelling:</h4>
+				<div id="myCarousel" class="carousel slide" data-ride="carousel">
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					<li data-target="#myCarousel" data-slide-to="1"></li>
+					<li data-target="#myCarousel" data-slide-to="2"></li>
+					<li data-target="#myCarousel" data-slide-to="3"></li>
+				</ol>
+
+					<!-- Wrapper for slides -->
+					<div class="carousel-inner">
+					  <div class="carousel-item active">
+						<img src="canada_ice.jpg" style="width:100%;">
+							<div class="carousel-caption">
+								<h4>Canada</h4>
+								<p>Columbia Icefield</p>
+							</div>
+					  </div>
+
+					  <div class="carousel-item">
+						<img src="canada_gas.jpg" style="width:100%;">
+							<div class="carousel-caption">
+								<h4>Canada</h4>
+								<p>Gastown Steam Clock</p>
+							</div>
+					  </div>
+					
+					  <div class="carousel-item">
+						<img src="singapore.jpg" style="width:100%;">
+							<div class="carousel-caption">
+								<h4>Singapore</h4>
+								<p>Gardens by the Bay</p>
+							</div>
+					  </div>
+					  
+					  <div class="carousel-item">
+						<img src="thailand.jpg" style="width:100%;">
+							<div class="carousel-caption">
+								<h4>Thailland</h4>
+								<p>Train Night Market Ratchada</p>
+							</div>
+					  </div>
+							
+					</div>
+
+					<!-- Left and right buttons-->
+					<a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+						<span class="carousel-control-prev-icon"></span>
+					</a>
+					<a class="carousel-control-next" href="#myCarousel" data-slide="next">
+						<span class="carousel-control-next-icon"></span>
+					</a>
+				</div>
+			</div>
+			<br>
+			<br>
+		<p>
+		I also love to take pictures of my outfits. I use an app called 'WEAR' to share my outfits with others. Sometimes, I get inspired by other users.
+		</p>
+		
+			<div>
+				<h4>Here is my account :</h4>		
+				
+				<iframe width="100%" height="500" src="https://wear.net/yammiekwing/" style="border:5px solid black;">
+				</iframe>
+				<a href="https://wear.net/yammiekwing/">Click here for better experience!</a>
+			</div>
+		</div>
+	</div>
+	<br>
+	
+	<div id="Contact_me">
+        <h1 class="title">Contact me</h1>
+	<table>              
+			<tr>
+				<td>E-mail:</td>
+				<td>tszkei.au@connect.polyu.hk</td>
+			</tr>
+			<tr>
+				<td>Phone:</td>
+				<td>+852 91234567</td>
+			</tr>
+    </table>
+	</div>
+	<br>
+	
+	<footer>
+		<p>Thanks for visiting my home page. Have a nice day&#128516
+		</p>
+	</footer>
+
+</body>
+
+</html>
